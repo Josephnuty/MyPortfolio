@@ -1,100 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="java.js" defer></script>
-          <title>My Portfolio</title>
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-     <header>
-        <!--Hero Section-->
-        <div class="hero">
-            <div class="hero-text fade-in">
-                <h1>Joseph Ian Oray</h1>
-                <h2>BSIT Student | Future Developer</h2>
-                <p>
-                    Welcome to my portfolio! I am a passionate BSIT student with a strong desire to become a skilled developer. Through this portfolio, 
-                    I aim to showcase my projects, skills, and experiences in the field of information technology. I am eager to learn and grow as a developer,
-                     and I hope to contribute to innovative solutions in the future. Thank you for visiting my portfolio!
-                </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-                <a href="#projects" class="btn">View My Projects</a>
-            </div>
-            <div class="hero-image fade-in">
-                <img src="images/pic.jpg" alt="Hero Image" class="hero-image">
-            </div>
-        </div>
-     </header>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-     <!--About Me Section-->
-     <section id="about">
-        <div class="conatiner">
-            <h2 class="section-title fade-in">About Me</h2>
+    html {
+      scroll-behavior: smooth;
+    }
 
-            <div class="about-content fade-in">
-                <p>
-                    I am a dedicated BSIT student with a passion for technology and development. I have a strong foundation in programming languages such as Java, Slight of Python, 
-                    and JavaScript, and I am constantly seeking opportunities to expand my
-                     knowledge and skills in the field of information technology. I am a quick learner, a team player, and I thrive in collaborative
-                      environments. My goal is to become a proficient developer and contribute to innovative projects
-                       that make a positive impact on society.
-               </p>
-            </div>
-        </div>
-     </section>
+    body {
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
 
-     <!--Projects Section-->
-     <section id="projects-grid">
+    header {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .hero {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .hero-text p {
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #4f46e5;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #e0e7ff;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 8px solid rgba(255,255,255,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #4f46e5;
+    }
+
+    .about-content {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      color: #4f46e5;
+    }
+
+    .tech {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .contact-box p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+
+    .contact-box a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #4f46e5;
+      color: white;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-image img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <div class="hero">
+      <div class="hero-text fade-in">
+        <h1>Your Name</h1>
+        <h2>BSIT Student | Future Web Developer</h2>
+        <p>
+          I create simple and responsive websites using HTML, CSS, and JavaScript.
+          I enjoy learning programming and building projects that improve my skills.
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
+      </div>
+
+      <div class="hero-image fade-in">
+        <img src="images/pic.jpg" alt="Profile Photo">
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT ME -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title fade-in">About Me</h2>
+
+      <div class="about-content fade-in">
+        <p>
+          Hello! I'm a first-year BSIT student passionate about technology and web development.
+          I am currently learning front-end development using HTML, CSS, and JavaScript.
+          My goal is to become a skilled software developer and create useful digital solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title fade-in">Projects</h2>
+
+      <div class="projects-grid">
+
         <div class="project-card fade-in">
-            <img src="images/pic2.png" alt="Project 1">
-            
-            <div class="project-content">
-                <h3>Hotel Management System</h3>
-                <p>A comprehensive solution for managing hotel operations, including reservations, check-ins, and inventory management.
-                </p>
-                <div class="tech">Language Used: Java, Mysql</div>
-            </div>
-        </div>
-        <div class="project-card fade-in">
-            <img src="images/Advertisement.jpg" alt="Project 2">
+          <img src="images/hotelr.png" alt="Project 1">
 
-            <div class="project-content">
-                <h3>Advertisement Poster</h3>
-                <p>A creative advertisement poster for promoting a local business.
-                </p>
-                <div class="tech">Software Used: Photoshop</div>
-            </div>
+          <div class="project-content">
+            <h3>Hotel Reservation System</h3>
+            <p>
+              A simple hotel reservation system built with JAVA and MySQL, allowing users to book rooms online.
+            </p>
+            <div class="tech">Language Used: JAVA, MySQL</div>
+          </div>
         </div>
-        <div class="project-card fade-in">
-            <img src="images/Personal proj.png" alt="Project 3">
-            <div class="project-content">
-                <h3>Ordering System  Project</h3>
-                <p>A personal project showcasing my skills and creativity.
-                </p>
-                <div class="tech">Language Used: C++</div>
-            </div>
-        </div>
-     </section>
-     <!--Contact Section -->
-     <section id ="contact">
-        <div class="conatiner">
-            <h2 class="section-title fade-in">Contact</h2>
 
-            <div class="contact-box fade-in">
-                <p>Email: jangadjoseph@gmail.com</p>
-                <p>Github: <a href="https://github.com/Josephnuty" target="_blank">jangadjoseph</a></p>
-                <p>Facebook: <a href="https://www.facebook.com/raii356" target="_blank">Joseph Ian Oray</a></p>
-            </div>
+        <div class="project-card fade-in">
+          <img src="images/adds.png" alt="Project 2">
+
+          <div class="project-content">
+            <h3>Advertisement Poster</h3>
+            <p>
+              A visually appealing advertisement poster for a local business.
+            </p>
+            <div class="tech">Software Used: Photoshop</div>
+          </div>
         </div>
-     </section>
-    <footer>
-    <p>© 2026 Joseph Ian Oray | Portfolio Website</p>
+
+        <div class="project-card fade-in">
+          <img src="images/personal-proj.png" alt="Project 3">
+
+          <div class="project-content">
+            <h3>Basic Order System</h3>
+            <p>
+              A simple order system that allows users to buy their preferred items.
+            </p>
+            <div class="tech">Software Used: C++</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Contact</h2>
+
+      <div class="contact-box fade-in">
+        <p>Email: yourname@gmail.com</p>
+        <p>GitHub: <a href="#">github.com/yourusername</a></p>
+        <p>Facebook: <a href="#">facebook.com/yourprofile</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Your Name | Portfolio Website</p>
   </footer>
-    </body>
+
+  <script>
+    // Fade-in animation when scrolling
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const showOnScroll = () => {
+      fadeElements.forEach((element) => {
+        const top = element.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 100) {
+          element.classList.add('show');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+  </script>
+
+</body>
 </html>
