@@ -16,6 +16,32 @@ navLinks.forEach(link => {
   });
 });
 
+// Active link highlighting based on scroll position
+const sections = document.querySelectorAll('section, header');
+
+const highlightActiveLink = () => {
+  let currentSection = '';
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    
+    if (window.pageYOffset >= sectionTop - 200) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').slice(1) === currentSection) {
+      link.classList.add('active');
+    }
+  });
+};
+
+window.addEventListener('scroll', highlightActiveLink);
+window.addEventListener('load', highlightActiveLink);
+
 // Fade-in animation when scrolling
 const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -67,4 +93,5 @@ window.addEventListener('scroll', () => {
 // Initialize on page load
 window.addEventListener('load', () => {
   showOnScroll();
+  highlightActiveLink();
 });
