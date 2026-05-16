@@ -67,6 +67,12 @@ body.light-mode {
   align-items: center;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .logo {
   color: var(--text);
   font-size: 1.5rem;
