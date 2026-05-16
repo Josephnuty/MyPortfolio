@@ -151,3 +151,33 @@ if (heroGreeting) {
 
   setInterval(changeGreeting, 4000);
 }
+
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const rootBody = document.body;
+
+const setTheme = (mode) => {
+  if (mode === 'light') {
+    rootBody.classList.add('light-mode');
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    localStorage.setItem('portfolioTheme', 'light');
+  } else {
+    rootBody.classList.remove('light-mode');
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    localStorage.setItem('portfolioTheme', 'dark');
+  }
+};
+
+if (themeToggle) {
+  const savedTheme = localStorage.getItem('portfolioTheme');
+  if (savedTheme === 'light') {
+    setTheme('light');
+  } else {
+    setTheme('dark');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = rootBody.classList.toggle('light-mode');
+    setTheme(isLight ? 'light' : 'dark');
+  });
+}
