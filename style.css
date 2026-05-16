@@ -21,6 +21,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-family: 'Fira Code', 'Source Code Pro', monospace;
 }
 
 body.light-mode {
@@ -676,7 +677,7 @@ section {
   border: 1px solid rgba(255, 176, 0, 0.2);
   border-radius: 8px;
   color: #e0e0e0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fira Code', 'Source Code Pro', monospace;
   font-size: 0.95rem;
   transition: all 0.3s ease;
 }
