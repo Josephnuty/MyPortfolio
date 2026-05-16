@@ -10,19 +10,20 @@ html {
 }
 
 body {
-  background: #f5f7fb;
-  color: #222;
+  background: #0a0e27;
+  color: #e0e0e0;
   line-height: 1.6;
 }
 
 /* ===== NAVIGATION BAR ===== */
 .navbar {
-  background: linear-gradient(135deg, #001a4d, #003d7a);
+  background: linear-gradient(135deg, #0a0e27, #1a1f3a);
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(255, 176, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 176, 0, 0.1);
 }
 
 .nav-container {
@@ -108,13 +109,26 @@ body {
 
 /* ===== HERO SECTION ===== */
 header {
-  background: linear-gradient(135deg, #001a4d, #1a3a52);
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f2147 100%);
   color: white;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 176, 0, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .hero {
@@ -174,8 +188,8 @@ header {
   height: 300px;
   object-fit: cover;
   border-radius: 50%;
-  border: 8px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 8px solid rgba(255, 176, 0, 0.3);
+  box-shadow: 0 0 40px rgba(255, 176, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.4);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -194,19 +208,19 @@ section {
 }
 
 #about {
-  background: white;
+  background: #0f1329;
 }
 
 #skills {
-  background: #f5f7fb;
+  background: #0a0e27;
 }
 
 #projects {
-  background: white;
+  background: #0f1329;
 }
 
 #contact {
-  background: linear-gradient(135deg, #001a4d, #003d7a);
+  background: linear-gradient(135deg, #0a0e27, #1a1f3a);
   color: white;
 }
 
@@ -219,8 +233,9 @@ section {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #001a4d;
+  color: #FFB000;
   font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 176, 0, 0.2);
 }
 
 #contact .section-title {
@@ -229,17 +244,19 @@ section {
 
 /* ===== ABOUT SECTION ===== */
 .about-content {
-  background: white;
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(15, 19, 41, 0.8));
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(255, 176, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.8;
+  color: #d0d0d0;
+  border: 1px solid rgba(255, 176, 0, 0.2);
 }
 
 #about .about-content {
-  background: #f9f9f9;
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(15, 19, 41, 0.8));
 }
 
 /* ===== SKILLS SECTION ===== */
@@ -250,34 +267,39 @@ section {
 }
 
 .skill-card {
-  background: white;
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.6), rgba(15, 19, 41, 0.6));
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(255, 176, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.3s;
+  border: 1px solid rgba(255, 176, 0, 0.15);
+  color: #e0e0e0;
 }
 
 .skill-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 26, 77, 0.15);
+  box-shadow: 0 15px 40px rgba(255, 176, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(15, 19, 41, 0.8));
+  border-color: rgba(255, 176, 0, 0.3);
+}
+
+.skill-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #FFB000;
+}
+
+.skill-card p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
 }
 
 .skill-icon {
   font-size: 3rem;
   color: #FFB000;
   margin-bottom: 15px;
-}
-
-.skill-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.skill-card p {
-  color: #666;
-  font-size: 0.95rem;
+  filter: drop-shadow(0 0 10px rgba(255, 176, 0, 0.3));
 }
 
 /* ===== PROJECTS SECTION ===== */
@@ -288,25 +310,28 @@ section {
 }
 
 .project-card {
-  background: white;
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.6), rgba(15, 19, 41, 0.6));
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(255, 176, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(255, 176, 0, 0.15);
 }
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0, 26, 77, 0.2);
+  box-shadow: 0 20px 50px rgba(255, 176, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(15, 19, 41, 0.8));
+  border-color: rgba(255, 176, 0, 0.3);
 }
 
 .project-image-wrapper {
   position: relative;
   overflow: hidden;
   height: 200px;
-  background: linear-gradient(135deg, #f5f7fb, #e0e7ff);
+  background: linear-gradient(135deg, #1a1f3a, #0f1329);
 }
 
 .project-image-wrapper img {
@@ -351,7 +376,7 @@ section {
 
 .project-content h3 {
   margin: 0;
-  color: #001a4d;
+  color: #FFB000;
   font-size: 1.3rem;
   font-weight: 600;
   flex-grow: 1;
@@ -375,7 +400,7 @@ section {
 }
 
 .project-content p {
-  color: #555;
+  color: #b0b0b0;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 16px;
@@ -386,7 +411,7 @@ section {
   margin-bottom: 16px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #666;
+  color: #90a0b0;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -396,7 +421,7 @@ section {
   display: flex;
   gap: 10px;
   padding-top: 12px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(255, 176, 0, 0.2);
 }
 
 .project-btn {
@@ -406,8 +431,8 @@ section {
   justify-content: center;
   gap: 6px;
   padding: 10px 12px;
-  background: linear-gradient(135deg, #001a4d, #003d7a);
-  color: white;
+  background: linear-gradient(135deg, #FFB000, #FFC400);
+  color: #001a4d;
   text-decoration: none;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -417,44 +442,50 @@ section {
 }
 
 .project-btn:hover {
-  background: linear-gradient(135deg, #003d7a, #0055aa);
+  background: linear-gradient(135deg, #FFC400, #FFD000);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 26, 77, 0.25);
+  box-shadow: 0 6px 20px rgba(255, 176, 0, 0.3);
 }
 
 .project-btn.github {
   flex: 0.5;
-  background: #333;
+  background: rgba(255, 176, 0, 0.2);
+  color: #FFB000;
+  border: 1px solid rgba(255, 176, 0, 0.3);
 }
 
 .project-btn.github:hover {
-  background: #1a1a1a;
+  background: rgba(255, 176, 0, 0.3);
+  border-color: rgba(255, 176, 0, 0.5);
 }
 
 /* ===== CONTACT SECTION ===== */
 .contact-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.6), rgba(15, 19, 41, 0.6));
   padding: 40px;
   border-radius: 15px;
   text-align: center;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 176, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 176, 0, 0.08);
 }
 
 .contact-box p {
   margin: 15px 0;
   font-size: 1.1rem;
+  color: #d0d0d0;
 }
 
 .contact-box a {
-  color: white;
+  color: #FFB000;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .contact-box a:hover {
-  opacity: 0.8;
+  color: #FFC400;
+  text-shadow: 0 0 10px rgba(255, 176, 0, 0.4);
 }
 
 .social-links {
@@ -470,16 +501,19 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 176, 0, 0.15), rgba(255, 176, 0, 0.1));
   border-radius: 50%;
   font-size: 1.5rem;
   transition: all 0.3s;
+  border: 1px solid rgba(255, 176, 0, 0.3);
+  color: #FFB000;
 }
 
 .social-links a:hover {
-  background: #FFB000;
+  background: linear-gradient(135deg, #FFB000, #FFC400);
   color: #001a4d;
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 176, 0, 0.3);
 }
 
 .tooltip {
@@ -490,9 +524,10 @@ section {
 footer {
   text-align: center;
   padding: 20px;
-  background: #001a4d;
-  color: white;
+  background: linear-gradient(135deg, #050609, #0a0e27);
+  color: #d0d0d0;
   font-weight: 500;
+  border-top: 1px solid rgba(255, 176, 0, 0.1);
 }
 
 /* ===== ANIMATIONS ===== */
@@ -518,11 +553,12 @@ footer {
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background-color: linear-gradient(135deg, #4f46e5, #6366f1);
+    background: linear-gradient(135deg, #0a0e27, #1a1f3a);
     width: 100%;
     text-align: center;
     transition: 0.3s;
     gap: 0;
+    border-bottom: 1px solid rgba(255, 176, 0, 0.1);
   }
 
   .nav-menu.active {
