@@ -107,7 +107,7 @@ if (contactForm) {
     const email = contactForm.querySelector('input[type="email"]').value;
     const message = contactForm.querySelector('textarea').value;
     
-    // Show success message (you can replace this with actual email sending logic)
+    // Show success message 
     const submitBtn = contactForm.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = '✓ Message Sent!';
