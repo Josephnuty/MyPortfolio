@@ -95,3 +95,33 @@ window.addEventListener('load', () => {
   showOnScroll();
   highlightActiveLink();
 });
+
+// Contact form submission handler
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form data
+    const name = contactForm.querySelector('input[type="text"]').value;
+    const email = contactForm.querySelector('input[type="email"]').value;
+    const message = contactForm.querySelector('textarea').value;
+    
+    // Show success message (you can replace this with actual email sending logic)
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = '✓ Message Sent!';
+    submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+    
+    // Reset form
+    contactForm.reset();
+    
+    // Restore button after 3 seconds
+    setTimeout(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.style.background = '';
+    }, 3000);
+    
+    console.log('Form submitted:', { name, email, message });
+  });
+}
