@@ -125,3 +125,29 @@ if (contactForm) {
     console.log('Form submitted:', { name, email, message });
   });
 }
+
+// Rotate hero greeting through different languages
+const heroGreeting = document.querySelector('.hero-greeting');
+if (heroGreeting) {
+  const greetings = [
+    { text: 'こんにちは', lang: 'Japanese' },
+    { text: 'Hello', lang: 'English' },
+    { text: 'Hola', lang: 'Spanish' },
+    { text: 'Bonjour', lang: 'French' },
+    { text: '안녕하세요', lang: 'Korean' },
+    { text: 'مرحبا', lang: 'Arabic' },
+    { text: 'Ciao', lang: 'Italian' },
+    { text: 'Hej', lang: 'Swedish' }
+  ];
+
+  let greetingIndex = 0;
+
+  const changeGreeting = () => {
+    const nextGreeting = greetings[greetingIndex];
+    heroGreeting.textContent = nextGreeting.text;
+    heroGreeting.setAttribute('title', nextGreeting.lang);
+    greetingIndex = (greetingIndex + 1) % greetings.length;
+  };
+
+  setInterval(changeGreeting, 4000);
+}
