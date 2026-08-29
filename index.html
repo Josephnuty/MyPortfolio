@@ -3,266 +3,784 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joseph Ian Oray - Portfolio</title>
+  <meta name="description" content="Joseph Ian Oray - Second-Year BSIT Student, Front-End Developer, and Software Enthusiast Portfolio." />
+  <meta name="author" content="Joseph Ian Oray" />
+  <meta property="og:title" content="Joseph Ian Oray - Developer Portfolio" />
+  <meta property="og:description" content="Explore my projects, technical skills, and development journey." />
+  <meta property="og:type" content="website" />
+  <title>Joseph Ian Oray | Developer Portfolio</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
   <!-- NAVIGATION BAR -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="logo"><i class="fas fa-code"></i> Joseph's Space</a>
+      <a href="#home" class="logo" aria-label="Joseph's Portfolio Home">
+        <span class="logo-icon"><i class="fas fa-terminal"></i></span>
+        <span class="logo-text">Joseph<span class="logo-accent">.dev</span></span>
+      </a>
+
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light mode">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode" title="Toggle Theme">
           <i class="fas fa-moon"></i>
         </button>
-        <div class="hamburger" id="hamburger">
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
+
         <ul class="nav-menu" id="navMenu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#terminal" class="nav-link">Terminal</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- HERO SECTION -->
-  <header id="home">
-    <div class="hero">
+  <header id="home" class="hero-section">
+    <div class="hero-glow-bg"></div>
+    <div class="container hero-container">
+      
       <div class="hero-text fade-in">
-        <p class="hero-greeting">こんにちは</p>
-        <h1>I'm Joseph Ian Oray</h1>
-        <h2>IT Student</h2>
-        <p class="hero-quote">“Every time is a perfect time.”</p>
-        <a href="#about" class="btn"><span>Read more</span> <span class="btn-arrow">→</span></a>
-      </div>
+        <div class="status-badge-wrapper">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for Projects & Internships</span>
+        </div>
 
-      <div class="hero-image fade-in">
-        <div class="hero-avatar">
-          <img src="images/pic.jpg" alt="Profile Photo">
+        <div class="greeting-container">
+          <span class="hero-greeting" id="heroGreeting" title="Japanese">こんにちは</span>
+          <span class="greeting-wave">👋</span>
+        </div>
+
+        <h1 class="hero-title">
+          I'm <span class="gradient-text">Joseph Ian Oray</span>
+        </h1>
+
+        <div class="hero-typewriter-wrapper">
+          <span class="typewriter-prefix">A passionate </span>
+          <span class="typewriter-text" id="typewriterText"></span>
+          <span class="typewriter-cursor">|</span>
+        </div>
+
+        <p class="hero-quote">
+          <i class="fas fa-quote-left quote-icon"></i>
+          Every time is a perfect time to learn, build, and innovate.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Get In Touch</span>
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <!-- Quick Social Proof / Links -->
+        <div class="hero-social-strip">
+          <span class="social-strip-label">Find me on:</span>
+          <div class="social-strip-icons">
+            <a href="https://github.com/Josephnuty" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.facebook.com/raii356" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="mailto:jangadjoseph@gmail.com" aria-label="Send Email" title="Email Me">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
         </div>
       </div>
+
+      <div class="hero-image-col fade-in">
+        <div class="hero-avatar-card">
+          <div class="avatar-glow-ring"></div>
+          <div class="hero-avatar">
+            <img src="images/pic.jpg" alt="Portrait of Joseph Ian Oray" width="320" height="320" loading="eager">
+          </div>
+
+          <!-- Floating Tech Pills -->
+          <div class="floating-badge badge-top-left" title="JavaScript">
+            <i class="fab fa-js"></i> <span>JavaScript</span>
+          </div>
+          <div class="floating-badge badge-top-right" title="Java">
+            <i class="fab fa-java"></i> <span>Java</span>
+          </div>
+          <div class="floating-badge badge-bottom-left" title="HTML5 & CSS3">
+            <i class="fab fa-html5"></i> <span>Frontend</span>
+          </div>
+          <div class="floating-badge badge-bottom-right" title="MySQL">
+            <i class="fas fa-database"></i> <span>MySQL</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </header>
 
-  <!-- ABOUT ME -->
-  <section id="about">
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section-about">
     <div class="container">
-      <h2 class="section-title fade-in">About Me</h2>
-
-      <div class="about-content fade-in">
-        <p>
-          Hello! I'm a Second-Year BSIT student passionate about technology and web development.
-          I am currently learning front-end development using HTML, CSS, and JavaScript.
-          My goal is to become a skilled software developer and create useful digital solutions.
-        </p>
+      <div class="section-header fade-in">
+        <span class="section-tag"><i class="fas fa-user"></i> Discover</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">A glimpse into my journey, passion, and aspirations as an aspiring developer</p>
       </div>
+
+      <!-- Quick Highlights Grid -->
+      <div class="about-highlights-grid fade-in">
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="highlight-info">
+            <span class="highlight-number">2nd Year</span>
+            <span class="highlight-label">BS Information Technology</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="highlight-info">
+            <span class="highlight-number">Web & Systems</span>
+            <span class="highlight-label">Primary Development Focus</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-map-pin"></i></div>
+          <div class="highlight-info">
+            <span class="highlight-number">Philippines</span>
+            <span class="highlight-label">Based & Available Globally</span>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-seedling"></i></div>
+          <div class="highlight-info">
+            <span class="highlight-number">Continuous</span>
+            <span class="highlight-label">Learning & Growth Mindset</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Bio & Academic Journey -->
+      <div class="about-main-wrapper fade-in">
+        <div class="about-story-card">
+          <h3 class="about-card-title"><i class="fas fa-book-open"></i> My Story</h3>
+          <p>
+            Hello! I'm <strong>Joseph Ian Oray</strong>, a Second-Year Bachelor of Science in Information Technology (BSIT) student with an enthusiasm for turning ideas into functional, aesthetically appealing digital realities.
+          </p>
+          <p>
+            My programming journey began with strong foundations in object-oriented programming (OOP) using <strong>Java</strong> and <strong>C++</strong>, alongside database modeling with <strong>MySQL</strong>. Currently, I am deeply focused on front-end web technologies (HTML5, CSS3, modern JavaScript) to design interactive and accessible user experiences.
+          </p>
+          <p>
+            I believe that great software is created through curiosity, clean code, and user-centered design. I'm always eager to collaborate on real-world projects and learn emerging tools and frameworks.
+          </p>
+
+          <div class="learning-stack">
+            <span class="learning-stack-title"><i class="fas fa-rocket"></i> Currently Exploring:</span>
+            <div class="tech-pills">
+              <span class="tech-pill">React.js</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">REST APIs</span>
+              <span class="tech-pill">Git Workflows</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic & Goals Box -->
+        <div class="about-timeline-card">
+          <h3 class="about-card-title"><i class="fas fa-compass"></i> Focus & Milestones</h3>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2024 - Present</span>
+                <h4>BS Information Technology (2nd Year)</h4>
+                <p>Deepening knowledge in Web Systems, Data Structures, OOP, and Database Architecture.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Core Projects</span>
+                <h4>Systems & UI Implementation</h4>
+                <p>Engineered desktop reservation systems (Java + MySQL) and front-end interface prototypes.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Future Vision</span>
+                <h4>Full-Stack Development & Collaboration</h4>
+                <p>Aiming to build scalable cloud-ready web applications and contribute to open-source software.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- SKILLS SECTION -->
-  <section id="skills">
+  <section id="skills" class="section-skills">
     <div class="container">
-      <h2 class="section-title fade-in">Skills</h2>
+      <div class="section-header fade-in">
+        <span class="section-tag"><i class="fas fa-layer-group"></i> Capabilities</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">Technologies, languages, and tools I use to craft software and digital designs</p>
+      </div>
 
-      <div class="skills-grid">
-        <div class="skill-card fade-in">
-          <div class="skill-icon"><i class="fab fa-html5"></i></div>
-          <h3>HTML</h3>
-          <p>Building semantic and accessible web structures</p>
+      <div class="skills-categories-grid">
+        
+        <!-- Category 1: Frontend -->
+        <div class="skill-category-card fade-in">
+          <div class="category-header">
+            <div class="category-icon frontend-icon"><i class="fas fa-code"></i></div>
+            <div>
+              <h3>Frontend Development</h3>
+              <p>Responsive, accessible, and interactive interfaces</p>
+            </div>
+          </div>
+          <div class="skills-badges-list">
+            <div class="skill-badge-item">
+              <i class="fab fa-html5 skill-ico html-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">HTML5</span>
+                <span class="skill-desc">Semantic & Accessible Markup</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fab fa-css3-alt skill-ico css-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">CSS3 & Styling</span>
+                <span class="skill-desc">Flexbox, Grid, Animations, Glassmorphism</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fab fa-js-square skill-ico js-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">JavaScript (ES6+)</span>
+                <span class="skill-desc">DOM, Async JS, Events & Logic</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fas fa-mobile-alt skill-ico responsive-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">Responsive Design</span>
+                <span class="skill-desc">Mobile-First, Adaptive Layouts</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="skill-card fade-in">
-          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-          <h3>CSS</h3>
-          <p>Creating responsive and modern designs</p>
+        <!-- Category 2: Programming & Backend -->
+        <div class="skill-category-card fade-in">
+          <div class="category-header">
+            <div class="category-icon backend-icon"><i class="fas fa-server"></i></div>
+            <div>
+              <h3>Programming & Databases</h3>
+              <p>Object-oriented systems and relational data</p>
+            </div>
+          </div>
+          <div class="skills-badges-list">
+            <div class="skill-badge-item">
+              <i class="fab fa-java skill-ico java-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">Java</span>
+                <span class="skill-desc">OOP Architecture, Desktop GUI & Systems</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fas fa-cube skill-ico cpp-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">C++</span>
+                <span class="skill-desc">Memory Management & Core Algorithms</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fas fa-database skill-ico db-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">MySQL</span>
+                <span class="skill-desc">Schema Design, Queries & CRUD Operations</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fas fa-cubes skill-ico oop-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">OOP Concepts</span>
+                <span class="skill-desc">Encapsulation, Inheritance, Polymorphism</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="skill-card fade-in">
-          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
-          <h3>JavaScript</h3>
-          <p>Adding interactivity and functionality</p>
+        <!-- Category 3: Tools & Design -->
+        <div class="skill-category-card fade-in">
+          <div class="category-header">
+            <div class="category-icon tools-icon"><i class="fas fa-toolbox"></i></div>
+            <div>
+              <h3>Tools & Creative Design</h3>
+              <p>Productivity, version control, and visual design</p>
+            </div>
+          </div>
+          <div class="skills-badges-list">
+            <div class="skill-badge-item">
+              <i class="fab fa-git-alt skill-ico git-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">Git & GitHub</span>
+                <span class="skill-desc">Version Control & Repository Management</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fas fa-terminal skill-ico cli-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">VS Code & CLI</span>
+                <span class="skill-desc">Modern IDE Workflow & Terminal Scripting</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fas fa-image skill-ico ps-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">Adobe Photoshop</span>
+                <span class="skill-desc">Graphic Assets, Layouts & Image Editing</span>
+              </div>
+            </div>
+
+            <div class="skill-badge-item">
+              <i class="fas fa-bug skill-ico debug-ico"></i>
+              <div class="skill-info-text">
+                <span class="skill-name">Problem Solving & Debugging</span>
+                <span class="skill-desc">Code Optimization & Troubleshooting</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="skill-card fade-in">
-          <div class="skill-icon"><i class="fab fa-java"></i></div>
-          <h3>Java</h3>
-          <p>Building desktop and backend applications</p>
-        </div>
-
-        <div class="skill-card fade-in">
-          <div class="skill-icon"><i class="fas fa-database"></i></div>
-          <h3>MySQL</h3>
-          <p>Designing and managing databases</p>
-        </div>
-
-        <div class="skill-card fade-in">
-          <div class="skill-icon"><i class="fas fa-cube"></i></div>
-          <h3>C++</h3>
-          <p>System programming and algorithms</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section-projects">
     <div class="container">
-      <h2 class="section-title fade-in">Projects</h2>
+      <div class="section-header fade-in">
+        <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of systems, applications, and creative works I've built</p>
+      </div>
 
-      <div class="projects-grid">
+      <!-- Project Filters -->
+      <div class="project-filters fade-in">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="software">Software & Systems</button>
+        <button class="filter-btn" data-filter="design">Graphic Design</button>
+      </div>
 
-        <div class="project-card fade-in">
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Project 1: Hotel Reservation System -->
+        <article class="project-card fade-in" data-category="software" data-project="hotel">
           <div class="project-image-wrapper">
-            <img src="images/hotelr.png" alt="Project 1">
-            <div class="project-badge">Featured</div>
+            <img src="images/hotelr.png" alt="Hotel Reservation System Screenshot" loading="lazy">
+            <div class="project-badge featured">Featured</div>
+            <div class="project-overlay">
+              <button class="overlay-btn view-details-trigger" data-project="hotel">
+                <i class="fas fa-search-plus"></i> View Details
+              </button>
+            </div>
           </div>
 
           <div class="project-content">
             <div class="project-header">
               <h3>Hotel Reservation System</h3>
-              <span class="status-badge">Completed</span>
+              <span class="status-badge completed"><i class="fas fa-check-circle"></i> Completed</span>
             </div>
-            <p>
-              A simple hotel reservation system built with JAVA and MySQL, allowing users to book rooms online.
+            
+            <p class="project-description">
+              A comprehensive hotel reservation and booking management system allowing guests to check room availability and administrators to manage reservations seamlessly.
             </p>
-            <div class="tech"><i class="fas fa-tools"></i> JAVA, MySQL</div>
+
+            <div class="project-tech-tags">
+              <span class="tech-tag"><i class="fab fa-java"></i> Java</span>
+              <span class="tech-tag"><i class="fas fa-database"></i> MySQL</span>
+              <span class="tech-tag"><i class="fas fa-desktop"></i> Swing GUI</span>
+            </div>
+
             <div class="project-links">
-              <a href="#" class="project-btn" title="View Details"><i class="fas fa-eye"></i> View</a>
-              <a href="https://github.com/Josephnuty" target="_blank" class="project-btn github" title="GitHub"><i class="fab fa-github"></i></a>
+              <button class="project-btn primary view-details-trigger" data-project="hotel">
+                <i class="fas fa-info-circle"></i> Details
+              </button>
+              <a href="https://github.com/Josephnuty" target="_blank" rel="noopener noreferrer" class="project-btn github" title="View Source on GitHub">
+                <i class="fab fa-github"></i> <span>GitHub</span>
+              </a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card fade-in">
+        <!-- Project 2: Advertisement Poster -->
+        <article class="project-card fade-in" data-category="design" data-project="poster">
           <div class="project-image-wrapper">
-            <img src="images/adds.png" alt="Project 2">
+            <img src="images/adds.png" alt="Advertisement Poster Design" loading="lazy">
+            <div class="project-badge design">Design</div>
+            <div class="project-overlay">
+              <button class="overlay-btn view-details-trigger" data-project="poster">
+                <i class="fas fa-search-plus"></i> View Details
+              </button>
+            </div>
           </div>
 
           <div class="project-content">
             <div class="project-header">
               <h3>Advertisement Poster</h3>
-              <span class="status-badge design">Design</span>
+              <span class="status-badge design"><i class="fas fa-paint-brush"></i> Creative</span>
             </div>
-            <p>
-              A visually appealing advertisement poster for a local business.
+            
+            <p class="project-description">
+              A promotional marketing poster designed for a business establishment with high visual appeal, modern typography, and brand-aligned aesthetics.
             </p>
-            <div class="tech"><i class="fas fa-tools"></i> Photoshop</div>
+
+            <div class="project-tech-tags">
+              <span class="tech-tag"><i class="fas fa-image"></i> Adobe Photoshop</span>
+              <span class="tech-tag"><i class="fas fa-vector-square"></i> Typography</span>
+              <span class="tech-tag"><i class="fas fa-palette"></i> Branding</span>
+            </div>
+
             <div class="project-links">
-              <a href="#" class="project-btn" title="View Details"><i class="fas fa-eye"></i> View</a>
+              <button class="project-btn primary view-details-trigger" data-project="poster">
+                <i class="fas fa-info-circle"></i> Details
+              </button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card fade-in">
+        <!-- Project 3: Basic Order System -->
+        <article class="project-card fade-in" data-category="software" data-project="order">
           <div class="project-image-wrapper">
-            <img src="images/personal-proj.png" alt="Project 3">
+            <img src="images/personal-proj.png" alt="Basic Order System Preview" loading="lazy">
+            <div class="project-badge system">System</div>
+            <div class="project-overlay">
+              <button class="overlay-btn view-details-trigger" data-project="order">
+                <i class="fas fa-search-plus"></i> View Details
+              </button>
+            </div>
           </div>
 
           <div class="project-content">
             <div class="project-header">
               <h3>Basic Order System</h3>
-              <span class="status-badge">Completed</span>
+              <span class="status-badge completed"><i class="fas fa-check-circle"></i> Completed</span>
             </div>
-            <p>
-              A simple order system that allows users to buy their preferred items.
+            
+            <p class="project-description">
+              An interactive point-of-sale and item ordering console program built in C++ featuring dynamic price calculation, inventory mapping, and item receipts.
             </p>
-            <div class="tech"><i class="fas fa-tools"></i> C++</div>
+
+            <div class="project-tech-tags">
+              <span class="tech-tag"><i class="fas fa-cube"></i> C++</span>
+              <span class="tech-tag"><i class="fas fa-terminal"></i> CLI Application</span>
+              <span class="tech-tag"><i class="fas fa-calculator"></i> Logic & Math</span>
+            </div>
+
             <div class="project-links">
-              <a href="#" class="project-btn" title="View Details"><i class="fas fa-eye"></i> View</a>
-              <a href="https://github.com/Josephnuty" target="_blank" class="project-btn github" title="GitHub"><i class="fab fa-github"></i></a>
+              <button class="project-btn primary view-details-trigger" data-project="order">
+                <i class="fas fa-info-circle"></i> Details
+              </button>
+              <a href="https://github.com/Josephnuty" target="_blank" rel="noopener noreferrer" class="project-btn github" title="View Source on GitHub">
+                <i class="fab fa-github"></i> <span>GitHub</span>
+              </a>
             </div>
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
+  <!-- INTERACTIVE TERMINAL SECTION -->
+  <section id="terminal" class="section-terminal">
     <div class="container">
-      <h2 class="section-title fade-in">Get In Touch</h2>
-      <p class="section-subtitle fade-in">Let's connect and create something amazing together</p>
+      <div class="section-header fade-in">
+        <span class="section-tag"><i class="fas fa-terminal"></i> Interactive Sandbox</span>
+        <h2 class="section-title">Developer Console</h2>
+        <p class="section-subtitle">Type commands or click quick actions to explore my background interactively</p>
+      </div>
 
-      <div class="contact-wrapper">
-        <!-- Contact Info Cards -->
-        <div class="contact-info-grid fade-in">
-          <div class="contact-info-card">
-            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-            <h3>Email</h3>
-            <p><a href="mailto:jangadjoseph@gmail.com">jangadjoseph@gmail.com</a></p>
+      <div class="terminal-container fade-in">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="t-btn t-btn-red"></span>
+            <span class="t-btn t-btn-yellow"></span>
+            <span class="t-btn t-btn-green"></span>
           </div>
-
-          <div class="contact-info-card">
-            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <h3>Location</h3>
-            <p>Philippines</p>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="info-icon"><i class="fas fa-briefcase"></i></div>
-            <h3>Availability</h3>
-            <p>Open for Projects</p>
+          <div class="terminal-title">joseph@portfolio: ~ (bash)</div>
+          <div class="terminal-actions">
+            <button id="clearTerminalBtn" class="terminal-btn-icon" title="Clear Console"><i class="fas fa-trash-alt"></i></button>
           </div>
         </div>
 
-        <!-- Contact Form & Social -->
-        <div class="contact-content fade-in">
-          <div class="contact-form-section">
-            <h3>Send Me a Message</h3>
-            <form class="contact-form">
-              <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
-              </div>
-              <div class="form-group">
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+        <div class="terminal-body" id="terminalOutput">
+          <div class="terminal-line"><span class="t-accent">Welcome to Joseph's Interactive Console v2.0!</span></div>
+          <div class="terminal-line">Type <span class="t-command">help</span> to view available commands, or click any suggestion below.</div>
+          <div class="terminal-line t-muted">--------------------------------------------------</div>
+        </div>
+
+        <div class="terminal-input-bar">
+          <span class="terminal-prompt">joseph@space:~$</span>
+          <input type="text" id="terminalInput" class="terminal-input" placeholder="Type a command (e.g., 'help', 'skills', 'about', 'clear')..." autocomplete="off" spellcheck="false">
+          <button id="terminalSubmit" class="terminal-submit-btn" aria-label="Run command"><i class="fas fa-paper-plane"></i></button>
+        </div>
+
+        <!-- Quick Terminal Command Pills -->
+        <div class="terminal-quick-pills">
+          <span class="quick-label">Quick Commands:</span>
+          <button class="cmd-pill" data-cmd="about">about</button>
+          <button class="cmd-pill" data-cmd="skills">skills</button>
+          <button class="cmd-pill" data-cmd="projects">projects</button>
+          <button class="cmd-pill" data-cmd="contact">contact</button>
+          <button class="cmd-pill" data-cmd="quote">quote</button>
+          <button class="cmd-pill" data-cmd="clear">clear</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section-contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag"><i class="fas fa-paper-plane"></i> Let's Talk</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a project idea, question, or opportunity? Feel free to reach out anytime!</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Left: Direct Info Cards -->
+        <div class="contact-info-col fade-in">
+          <div class="contact-info-card">
+            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-card-details">
+              <h4>Direct Email</h4>
+              <p><a href="mailto:jangadjoseph@gmail.com" id="emailLink">jangadjoseph@gmail.com</a></p>
+              <button class="copy-email-btn" id="copyEmailBtn" title="Copy Email to Clipboard">
+                <i class="fas fa-copy"></i> <span id="copyEmailText">Copy to Clipboard</span>
+              </button>
+            </div>
           </div>
 
-          <div class="contact-divider">or</div>
+          <div class="contact-info-card">
+            <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-card-details">
+              <h4>Location</h4>
+              <p>Philippines</p>
+              <span class="contact-subtext">GMT+8 (Asia/Manila)</span>
+            </div>
+          </div>
 
-          <div class="social-section">
-            <h3>Connect With Me</h3>
-            <div class="social-links-extended">
-              <a href="https://github.com/Josephnuty" target="_blank" class="social-link-item" title="GitHub">
+          <div class="contact-info-card">
+            <div class="contact-card-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="contact-card-details">
+              <h4>Availability</h4>
+              <p>Open for Projects & Internships</p>
+              <span class="contact-subtext">Part-Time / Collaborations</span>
+            </div>
+          </div>
+
+          <!-- Social Links Connect Card -->
+          <div class="social-connect-card">
+            <h4>Connect On Social Media</h4>
+            <div class="social-links-grid">
+              <a href="https://github.com/Josephnuty" target="_blank" rel="noopener noreferrer" class="social-box github" title="GitHub Profile">
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
               </a>
-              <a href="https://www.facebook.com/raii356" target="_blank" class="social-link-item" title="Facebook">
+              <a href="https://www.facebook.com/raii356" target="_blank" rel="noopener noreferrer" class="social-box facebook" title="Facebook Profile">
                 <i class="fab fa-facebook"></i>
                 <span>Facebook</span>
               </a>
-              <a href="#" class="social-link-item coming-soon" title="Coming Soon">
+              <a href="mailto:jangadjoseph@gmail.com" class="social-box email" title="Direct Email">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+              </a>
+              <a href="https://github.com/Josephnuty" target="_blank" rel="noopener noreferrer" class="social-box linkedin" title="LinkedIn Profile">
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
               </a>
             </div>
           </div>
         </div>
+
+        <!-- Right: Message Form -->
+        <div class="contact-form-col fade-in">
+          <div class="contact-form-container">
+            <h3 class="form-title"><i class="fas fa-comment-dots"></i> Send Me a Message</h3>
+            <p class="form-desc">Fill out this form and I will get back to you as soon as possible.</p>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="userName">Your Name <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fas fa-user input-icon"></i>
+                  <input type="text" id="userName" name="name" placeholder="John Doe" required autocomplete="name">
+                </div>
+                <span class="field-error" id="nameError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="userEmail">Your Email <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fas fa-envelope input-icon"></i>
+                  <input type="email" id="userEmail" name="email" placeholder="john@example.com" required autocomplete="email">
+                </div>
+                <span class="field-error" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="userSubject">Subject (Optional)</label>
+                <div class="input-wrapper">
+                  <i class="fas fa-tag input-icon"></i>
+                  <input type="text" id="userSubject" name="subject" placeholder="Project Inquiry / Hello">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="userMessage">Your Message <span class="required">*</span></label>
+                <div class="input-wrapper textarea-wrapper">
+                  <i class="fas fa-comment-alt input-icon textarea-icon"></i>
+                  <textarea id="userMessage" name="message" rows="5" placeholder="Hi Joseph, I would like to talk about..." required></textarea>
+                </div>
+                <span class="field-error" id="messageError"></span>
+              </div>
+
+              <button type="submit" class="btn btn-submit" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <i class="fas fa-paper-plane btn-icon"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Joseph Ian Oray | Portfolio Website</p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#home" class="footer-logo">Joseph<span class="logo-accent">.dev</span></a>
+        <p>Built with passion, clean code, and modern web design.</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Joseph Ian Oray. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <script src="java.js"></script>
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastNotification" class="toast-notification" role="status" aria-live="polite">
+    <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+    <div class="toast-message" id="toastMessage">Action completed!</div>
+  </div>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div class="modal-backdrop" id="projectModalBackdrop" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal-header">
+        <div class="modal-category" id="modalCategory">Software & Systems</div>
+        <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      </div>
+
+      <div class="modal-image-container">
+        <img id="modalImage" src="images/hotelr.png" alt="Project Preview">
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Overview</h3>
+          <p id="modalDescription">Detailed description goes here.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Key Features & Highlights</h3>
+          <ul class="modal-features-list" id="modalFeatures">
+            <!-- Dynamically populated -->
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Technologies Used</h3>
+          <div class="modal-tech-tags" id="modalTechTags">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer" id="modalFooter">
+        <!-- Dynamically populated link buttons -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript File -->
+  <script src="java.js"></script>
 </body>
 </html>
